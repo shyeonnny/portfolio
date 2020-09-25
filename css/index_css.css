@@ -1,0 +1,97 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&family=Pacifico&display=swap');
+
+
+
+/*리셋*/
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+
+/*레이아웃*/
+body {font-family: 'Nanum Gothic', sans-serif; font-size: 14px; color:#4e4e4e; line-height: 1.4;}
+.wrap{width: 100%; min-width: 1100px;}
+
+/*헤더*/
+header {width: 100%; height : 150px; line-height: 120px; padding: 0 60px; box-sizing: border-box; top:0; background: rgb(240, 214, 232);position: fixed; z-index: 100;}
+header .logo {font-family: 'Pacifico', cursive;display: block; font-size: 50px; font-weight:900; letter-spacing: -5px; color:#39321b; position: absolute; left :30%; }
+header nav {float:right;}
+header nav .gnd li {display:inline-block; margin-left:60px;}
+header nav .gnd li a {display: block; font-size: 18px; text-transform: uppercase; position: relative;}
+header nav .gnd li a:after{content:''; width:0%; height:2px; position: absolute; background: rgb(121, 118, 118); bottom: 47px; left:50%; transform:translateX(-50%); transition: all 0.3s;}
+header nav .gnd li a:hover:after, header nav .gnd li a:focus:after{width:100%;}
+.innerHeader .util {width: 218px; height:100%; float:left; margin-left:2%;}
+
+
+
+/*비주얼*/
+section.visual {margin-top: 150px; padding-bottom: 50px; position: relative;}
+section.visual:before {content: ''; width: 53%; height: 400px; position: absolute; bottom: 0; right: 0;background: #ebd1f5;}
+section.visual .img {width: 94%; text-align: center; position: relative; overflow: hidden;}
+section.visual .img img {width: 100%;}
+section.visual .title {position: absolute; top:40%; left: 8%; color: #fff;}
+section.visual .title h2{font-size: 50px; margin-bottom: 30px;color : rgb(71, 71, 71);}
+section.visual .title p {font-size: 20px; font-weight: 300;}
+section.visual .menu {position: absolute; bottom: 15%; left: 8%;}
+section.visual .menu li{float: left;margin-right: 60px; }
+section.visual .menu li a{display: block; color: #fff;}
+section.visual .menu li a p {float: left; font-weight: bold; font-size: 20px; line-height: 1.6;}
+section.visual .menu li a p span {display: block;font-weight: 100; font-size: 15px; color: #aaa;}
+section.visual .menu li a .arrow {display: block; float: right; margin-top: 10px; margin-left: 20px; position: relative; z-index: 1; }
+section.visual .menu li a .arrow:before {content: '♡'; font-size: 35px; width: 40px; height: 40px; background: rgba(14, 7, 7, 0.4);position: absolute; top:10px; right: 10px; z-index: -1; transition: all 0.2s;}
+section.visual .menu li a:hover .arrow:before,section.visual .menu li a:focus .arrow:before {right: 0; top: 0;}
+
+section.visual .img .mask {display: block; position: absolute; top:0; width: 1px;height: 100%; background: rgba(255, 255, 255, 0.16); }
+section.visual .img .mask.a {left: 0%;} 
+section.visual .img .mask.b {left: 25%;} 
+section.visual .img .mask.c {left: 50%;} 
+section.visual .img .mask.d {left: 75%;} 
+
+@keyframes mask {
+    0%{width: 25%; background: rgb(245, 240, 244);}
+    50%{width: 25%; background: rgb(245, 240, 244);}
+    99% {background:  rgb(245, 240, 244);}
+}
+section.visual .img .mask.a {animation-name: mask; animation-duration: 0.4s; }
+section.visual .img .mask.b {animation-name: mask; animation-duration: 0.6s; }
+section.visual .img .mask.c {animation-name: mask; animation-duration: 0.8s; }
+section.visual .img .mask.d {animation-name: mask; animation-duration: 1s; }
+
+@keyframes slid-up {
+    0%{opacity: 0;}
+   40%{opacity: 0; transform: translateY(40px);}
+}
+
+section.visual .title h2{animation-name:slid-up; animation-duration: 1.5s; }
+section.visual .title p {animation-name:slid-up; animation-duration: 2.2s;}
+section.visual .menu {animation-name:slid-up; animation-duration: 2.8s;}
+section.visual .img img {transform: scale(1); animation-name: scaleani; animation-duration: 2s;}
+
+@keyframes scaleani {
+    0%{transform: scale(1.3);}
+   30%{transform: scale(1.3);}
+}
+
+/*섹션 해피*/
+.happy {width: 1400px; margin: 0 auto; color:#333; margin-top: 100px; }
+.happy h2 {text-align: center; font-size: 45px; font-weight: bold; margin-bottom: 50px;}
+.happy h2 .colortext { color:#ab63bd;}
+.happy ul {width:100%; height: auto; margin:0 auto;  overflow: hidden;}
+.happy ul li {float:left; width:32.2%;  margin-right: 1.7%; margin-bottom: 80px; background:#f8f1c8; }
+.happy ul li:nth-child(2) {background: #dcbddf;}
+.happy ul li:nth-child(3) {margin-right: 0; background: #dddfc0;}
+.happy ul li a {display: block; width:100%; height: 100%; padding:50px 0 50px 30px; box-sizing:border-box; position: relative; overflow: hidden;}
+.happy ul li p {font-size: 19px; margin-bottom: 30px;}
+.happy ul li h3 {font-size: 23px; margin-bottom: 70px;}
+.happy ul li p.img {width:380px; height:250px; margin-right: 0; float: right; overflow: hidden;}
+.happy ul li p.img img {width:100%; transition: all 0.3s;}
+.happy ul li a:after {content:''; position: absolute; top:60px; right:0; width:63%; height: 2px; 
+    background: rgba(237,237,233,0.42);}
+.happy ul li:nth-child(2) a:after{width:60%;}
+.happy ul li:nth-child(3) a:after{width:40%;}
+.happy ul li a:hover .img img {transform: scale(1.2); transition: 1.2s;}
